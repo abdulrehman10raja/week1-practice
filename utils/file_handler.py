@@ -3,7 +3,7 @@ import csv
 
 
 def read_text_file(path: str) -> str:
-    """Read a text file and return its contents as a string."""
+    """Read a text file and return its full contents as a string."""
     with open(path, "r") as f:
         return f.read()
 
