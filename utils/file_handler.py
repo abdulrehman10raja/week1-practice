@@ -25,3 +25,11 @@ def read_csv_file(path: str) -> list:
     with open(path, "r", newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         return list(reader)
+
+
+def write_csv_file(path: str, rows: list, fieldnames: list) -> None:
+    """Write a list of dictionaries to a CSV file."""
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
